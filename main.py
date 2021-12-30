@@ -4,9 +4,10 @@
     @Date :   29-12-2021
 """
 from fastapi import FastAPI
-from db_connect import DBConnection
 from pydantic import BaseModel
+
 from queries import *
+
 app = FastAPI(title="Online Movie Rating")
 
 connection = DBConnection.establish_connection()
@@ -21,7 +22,7 @@ class Reviewer(BaseModel):
 
 @app.get("/")
 def hello_world():
-    return {'message':'Welcome To FastAPI CRUD Operations'}
+    return {'message': 'Welcome To FastAPI CRUD Operations'}
 
 
 @app.get("/item/{item_id}")
