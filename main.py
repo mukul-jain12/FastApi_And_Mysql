@@ -7,7 +7,7 @@ from fastapi import FastAPI
 from db_connect import DBConnection
 from pydantic import BaseModel
 from queries import *
-app = FastAPI()
+app = FastAPI(title="Online Movie Rating")
 
 connection = DBConnection.establish_connection()
 cursor = connection.cursor(buffered=True)
